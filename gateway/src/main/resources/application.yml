@@ -1,0 +1,31 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /api
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]': # 前两行不能换，浏览器安全标准要求
+            allowCredentials: true
+            allowedOriginPatterns: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      routes:
+        - id: user
+          uri: http://127.0.0.1:8001
+          predicates:
+            - Path=/api/user/**
+          filters:
+            - RewritePath=/api/?(?<segment>.*),/$\{segment}
+        - id: passenger
+          uri: http://127.0.0.1:8002
+          predicates:
+            - Path=/api/passenger/**
+          filters:
+            - RewritePath=/api/?(?<segment>.*),/$\{segment}

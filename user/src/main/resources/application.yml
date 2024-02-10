@@ -1,0 +1,24 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /user
+spring:
+  #  application:
+  #    name: bilibili-main
+  #  main:
+  #    allow-circular-references: true  # 允许循环引用
+  datasource:
+    url: jdbc:mysql://rm-cn-4xl3kaims000fumo.rwlb.rds.aliyuncs.com:3306/train
+    username: train
+    password: Qq1243134432
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+jwt:
+  secret-key: "abc"
+logging:
+  level:
+    com.june: debug
