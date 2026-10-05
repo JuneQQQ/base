@@ -1,0 +1,13 @@
+# competition data must not be redistributed (rules 2.4.b) - keep it out of git
+data/
+cache*/
+runs/
+*.npy
+*.pt
+*.pth
+*.dcm
+labels*.csv
+*_raw.jsonl
+*_batch.json
+submission.csv
+__pycache__/

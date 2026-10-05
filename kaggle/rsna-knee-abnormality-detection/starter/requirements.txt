@@ -1,0 +1,14 @@
+# core (all preinstalled on Kaggle GPU images except the pylibjpeg / gdcm codecs)
+numpy
+pandas
+scikit-learn
+opencv-python-headless
+pydicom>=3.0
+pylibjpeg
+pylibjpeg-libjpeg
+pylibjpeg-openjpeg
+torch>=2.1
+timm>=1.0
+# label extraction (optional, pick one)
+anthropic>=1.11   # 02_extract_labels.py claude
+# vllm            # 02_extract_labels.py vllm (needs a GPU)
